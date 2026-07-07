@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No es un problema de tecnología. Es una pregunta que nadie hizo antes de construir. — Luginn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAFA;
+    --text: #111111;
+    --text-secondary: #6B7280;
+    --border: #E5E7EB;
+    --accent: #0A84FF;
+    --accent-dark: #0B1D3A;
+    --font: 'Bahnschrift', 'Archivo', system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.65; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+  header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 56px; }
+  .wordmark { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: var(--text-secondary); text-transform: lowercase; }
+  .wordmark span { color: var(--accent); }
+  .meta { font-size: 13px; color: var(--text-secondary); }
+  h1 { font-size: 34px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 16px; }
+  .hook { font-size: 19px; color: var(--text-secondary); margin: 0 0 48px; padding-left: 16px; border-left: 2px solid var(--accent); }
+  h2 { font-size: 21px; font-weight: 600; margin: 48px 0 12px; }
+  p { font-size: 16px; margin: 0 0 16px; }
+  .block { background: #FFFFFF; border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+  .diagram { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+  .diagram .card { flex: 1; min-width: 140px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; font-size: 14px; }
+  .diagram .card b { display: block; margin-bottom: 6px; color: var(--accent-dark); }
+  .diagram .arrow { align-self: center; color: var(--text-secondary); font-size: 20px; }
+  ul, ol { padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  .sources { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-secondary); }
+  .sources h2 { font-size: 16px; color: var(--text); }
+  .sources ul { padding-left: 18px; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--bg); border: 1px solid var(--border); margin-left: 6px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-secondary); }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="wordmark">lug<span>inn</span></div>
+    <div class="meta">Julio 2026</div>
+  </header>
+
+  <h1>No es un problema de tecnología. Es una pregunta que nadie hizo antes de construir.</h1>
+  <p class="hook">Más del 80% de las empresas no ve impacto en sus inversiones de IA agéntica, según McKinsey. Y casi nunca es por el modelo.</p>
+
+  <h2>La causa no es ejecución. Es clasificación — y ocurre antes de escribir código</h2>
+  <p>McKinsey atribuye ese 80% a rediseño de flujos, liderazgo y cultura, no a la tecnología. Eso es el dato. Lo que sigue es mi lectura, construida sobre ese dato, no algo que McKinsey afirme literalmente.</p>
+  <p>Cuando bajas un nivel más, la causa raíz suele ser la misma: la organización decide "construir un agente" cuando el problema pedía un workflow inteligente, o al revés. El error no está en cómo se ejecutó el proyecto — está en el planteamiento inicial, en la reunión donde alguien nombró la solución antes de entender el problema.</p>
+
+  <h2>El criterio real no es el que crees</h2>
+  <p>La distinción que más se usa es determinista vs. probabilista: si sigue reglas fijas es workflow, si "razona" es agente. Es cómoda, y es la que lleva a la mayoría a clasificar mal. El criterio real es otro, y es una decisión de liderazgo, no un detalle de arquitectura: quién controla la secuencia de pasos.</p>
+
+  <div class="diagram">
+    <div class="card"><b>Workflow inteligente</b>El LLM interpreta lenguaje natural, pero la secuencia de pasos está fija de antemano por un humano. Se puede dibujar el diagrama de flujo completo antes de correrlo.</div>
+    <div class="arrow">≠</div>
+    <div class="card"><b>Agente</b>El modelo decide dinámicamente qué hacer, con qué herramienta, cuántas veces iterar y cuándo detenerse. El número de pasos solo se conoce mientras corre.</div>
+  </div>
+
+  <h2>Lo que se rompe cuando te equivocas — en cualquiera de las dos direcciones</h2>
+  <p>Construir un agente donde bastaba un workflow no es "más ambicioso", es exceso de riesgo sin beneficio: le das autonomía y superficie de exposición a algo que solo necesitaba interpretar lenguaje natural sobre una secuencia fija. Un FAQ o un agendamiento de citas no necesita razonar dinámicamente — necesita hacerlo bien, siempre igual.</p>
+  <p>Forzar un workflow donde el problema pedía un agente rompe por el otro lado: la secuencia rígida no puede absorber la variabilidad real de los casos. Un pre-triaje donde la siguiente pregunta depende de la respuesta anterior, metido a la fuerza en un árbol de decisión fijo, termina forzando al usuario — o al caso clínico — a encajar en pasos que no le quedan.</p>
+
+  <h2>Si sí es un agente, la decisión de liderazgo no termina ahí</h2>
+  <p>Clasificar bien es el primer filtro, no el único. Una vez que el problema sí pide un agente, queda la pregunta de dónde y cómo interviene el juicio humano — y ahí un guardrail (una restricción que vive fuera del razonamiento del modelo, que este no puede reescribir) es lo que separa "el agente decide" de "el agente decide dentro de límites que la organización controla".</p>
+
+  <div class="block">
+    <b>Tres tipos de guardrail</b>
+    <ul>
+      <li><b>Duro</b> — corta el flujo y fuerza una ruta fija, sin pasar por el modelo. Para acciones irreversibles o de consecuencia severa.</li>
+      <li><b>De validación</b> — no detiene nada, pero exige revisión humana antes de ejecutar. El agente recomienda; no ejecuta solo.</li>
+      <li><b>De rango/output</b> — descarta o corrige una salida puntual fuera de los límites permitidos, sin frenar toda la conversación.</li>
+    </ul>
+  </div>
+
+  <p>"Human-in-the-loop" (el humano interviene en varios puntos intercalados) y "human above the loop" (el agente corre todo el proceso y el humano juzga solo el resultado final) suelen presentarse como dos modelos distintos. En el fondo son el mismo guardrail de validación, aplicado con distinta frecuencia. La variable que decide cuál usar no es qué tan cómodo se siente el líder — es si la acción específica es reversible. Lo reversible puede esperar a un checkpoint final. Lo irreversible necesita el guardrail antes de que ocurra.</p>
+  <p>Y ninguno de los dos —guardrail u observabilidad— elimina el riesgo del todo. Observabilidad es forense, audita después; guardrail es preventivo, evita antes. Juntos reducen el riesgo a un nivel gestionable. Prometer riesgo cero en gobernanza no es rigor, es una promesa imposible de cumplir.</p>
+
+  <h2>La pregunta que hay que responder antes de nombrar la solución</h2>
+  <p>¿El negocio necesita un flujo determinístico con validación humana en cada paso, o un objetivo con reglas de negocio y guardrails donde el humano valida solo el resultado final? Esa es la pregunta que decide si el proyecto se llama "agente" o "workflow" — y responderla antes, no después, es lo que separa una iniciativa bien planteada de una que entra directo al 80% que McKinsey ya midió.</p>
+
+  <div class="sources">
+    <h2>Fuentes</h2>
+    <ul>
+      <li>Framework de Anthropic, "Building Effective Agents" <span class="tag">marco conceptual</span></li>
+      <li>Yao et al. (2022), paper original de ReAct <span class="tag">marco conceptual</span></li>
+      <li>McKinsey, "AI is everywhere. The agentic organization isn't—yet" <span class="tag">fuente directa</span></li>
+      <li>Conexión entre el hallazgo de McKinsey y el error de clasificación agente/workflow <span class="tag">análisis propio</span></li>
+    </ul>
+  </div>
+
+  <footer>
+    <div>luginn — julio 2026</div>
+    <a href="https://www.linkedin.com/in/ronaldvilcasm/">linkedin.com/in/ronaldvilcasm</a>
+  </footer>
+
+</div>
+</body>
+</html>
